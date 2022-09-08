@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: scroll;
+}
+
+.menulateral{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 80px;
+    background: #5DC1B9;
+    padding: 6px 14px;
+    transition: all 0.8s ease;
+}
+
+.menulateral.active{
+    width: 260px;
+}
+
+
+
+.menulateral .logo_content .logo{
+    color: #fff;
+    display: flex;
+    height: 50%;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.menulateral.active .logo_content .logo{
+    opacity: 1;
+    pointer-events: auto;    
+}
+
+.menulateral .logo_content .logo i{
+    font-size: 30px;
+    margin-right: 5px;
+    margin-top: 10px;
+ }
+
+.menulateral .logo_content .logo .logo_nombre{
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 10px;
+
+ }
+
+.menulateral #boton{
+    position: absolute;
+    color: #fff;
+    left: 50%;
+    top: 5px;
+    font-size: 30px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+ }
+.menulateral.active #boton{
+    transition: 1s;
+    left: 240px;
+ }
+
+.menulateral ul{
+    margin-top: 20px;
+}
+
+.menulateral ul li{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+
+}
+
+.menulateral ul li .tooltip{
+    position: absolute;
+    left: 80px;
+    top: 100%;
+    transform: translateY(-40px);
+    border-radius: 6px;
+    height: 35px;
+    width: 122px;
+    background: #DCF3F3;
+    line-height: 35px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.menulateral ul li:hover .tooltip{
+    transition: all 0.5s ease;
+    opacity: 1;
+    top: 50%;
+    
+}
+
+.menulateral.active ul li .tooltip{
+    display: none;
+}
+
+
+
+.menulateral ul li a{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4 ease;
+    border-radius: 12px;
+    white-space: nowrap;
+
+}
+
+.menulateral ul li a:hover {
+    color: #5DC1B9;
+    background: #fff;
+
+}
+
+.menulateral ul li i{
+    font-size: 30px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+
+.menulateral .nombre_link{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.menulateral.active .nombre_link{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.menulateral .perfil_content{
+    position: absolute;
+    color: #fff;
+    bottom: 20px;
+    left: 0;
+}
+
+.menulateral .perfil_content .perfil{
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    height: 150px;
+    background: #5DC1B9;
+    border-radius: 10px;
+    box-shadow: inset 5px 5px 10px #4fa49d,
+            inset -5px -5px 10px #6bded5;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .1s ease;
+}
+.menulateral.active .perfil_content .perfil{
+    opacity: 1;
+    pointer-events:none;
+    transition: all .4s ease;
+}
+.perfil_content .perfil_detalle{
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.menulateral.active .perfil_detalle{
+    opacity: 1;
+    pointer-events: none;
+
+}
+
+.perfil_content .perfil_detalle img{
+    text-align: center;
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 12px;
+
+}
+
+.perfil.perfil_detalle .nombre_trabajo{
+    margin-left: 10px;   
+}
+
+.perfil .perfil_detalle .nombre{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.perfil .perfil_detalle .trabajo{
+    font-size: 14px;
+}
+
+
+.inicio_content{
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 80px);
+    left: 80px;
+    transition: all 0.5s ease;
+}
+
+
+
+.inicio_content .text{
+    font-size: 30px;
+    font-weight: 500;
+    color: #1d1b31;
+    margin: 0px;
+    
+    
+}
+
+.menulateral.active ~ .inicio_content{
+    width: calc(100% - 260px);
+    left: 270px;
+}
+
+.fondo{
+    width: 100%;
+  height: 100vh;
+  display: flex;
+  background-size: 600% 300%;
+  background-image: linear-gradient(-45deg, #3bade3 0%, #576fe6 25%, #9844b7 51%, #ff357f 100%);
+  animation: AnimateBG 20s ease infinite;
+
+}
+
+h1{
+    position: fixed;
+    color: #fff;
+    font-size: 100px;
+    height: 100vh;
+    bottom: -30px;
+}
+
+.lista{
+    display: fixed;
+    flex-direction: column;
+    margin-left: 150px;
+    margin-top: -120px;
+}
+
+.item{
+    margin-left: 50px;
+    position: absolute;
+    animation: roll 8s ease 1s infinite backwards;
+}
+.item:nth-child(1){
+    color: #fff;
+    animation-delay: 2s;
+    opacity: 0;
+}
+
+.item:nth-child(2){
+    color: #fff;
+    animation-delay: 4s;
+    opacity: 0;   
+}
+
+.item:nth-child(3){
+    color: #fff;
+    animation-delay: 6s;
+    opacity: 0;   
+}
+
+.item:nth-child(4){
+    color: #fff;
+    animation-delay: 8s;
+    opacity: 0;
+}
+
+.btn-wp{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+}
+
+
+
+@keyframes roll{
+    0%{
+        opacity: 0;
+        transform: translate3d(0px, -70%px, 0px);
+    }
+    2.5%, 25% {
+        opacity: 1;
+        transform: translate3d(0px);
+    }
+    27.5%, 100%{
+        opacity: 0;
+        transform: translate3d(0px, 70%px, 0px);
+    }
+}
+
+
+
+@keyframes AnimateBG { 
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
